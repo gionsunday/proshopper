@@ -2,6 +2,8 @@ import {MouseEvent} from 'react';
 import Link from 'next/link';
 import HeaderCart from './cart/HeaderCart';
 import ChooseVariantModal from './header/ChooseVariantModal';
+import logo from '../assets/Untitled-new.png'
+import Image from 'next/image';
 // import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {useAppDispatch, useAppSelector} from '../hooks/redux';
 import {setIsOpened} from '../redux/reducers/asideMenu';
@@ -34,28 +36,37 @@ export default function Header() {
 							<FontAwesomeIcon icon={faWhatsapp} /> +1 (123) 123-45-67
 						</a>
 					</div>
+
+					<div className={'page-header__logo-row'}>
+				<div className='container page-header__logo-container'>
+					<div className={'page-header__logo-wrapper'}>
+						<Link href='/' className={'page-header__logo-link'}>
+							<Image 
+							src={logo}
+							width={180}
+							height={150}
+							alt='LOGO'
+							/>
+						</Link>
+					</div>
+					
+				</div>
+				</div>
 					<ul className='page-header__menu list-unstyled'>
 						<li>
 							<Link href={'/shipping'} className='page-header__phone-link'>
 								Shipping
 							</Link>
 						</li>
+						 
+
 						<li>
 							<Link href={'/about'} className='page-header__phone-link'>
 								About
 							</Link>
 						</li>
-					</ul>
-				</div>
-			</div>
-			<div className={'page-header__logo-row'}>
-				<div className='container page-header__logo-container'>
-					<div className={'page-header__logo-wrapper'}>
-						<Link href='/' className={'page-header__logo-link'}>
-							<span>THE MOON</span>
-						</Link>
-					</div>
-					<div className={'page-header__right-blocks'}>
+						<li>
+							<div className={'page-header__center-blocks'}>
 						<HeaderCart className={'page-header__moon-cart'} />
 						<button type={'button'}
 										className={'hamburger-btn page-header__hamburger'}
@@ -66,8 +77,12 @@ export default function Header() {
 							<span className={clsx('hamburger-btn__bar', {'last-opened': asideIsOpened})} />
 						</button>
 					</div>
+						 </li>
+					</ul>
 				</div>
 			</div>
+			{/*
+			</div> */}
 			<ChooseVariantModal />
 		</header>
 	);

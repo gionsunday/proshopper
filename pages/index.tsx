@@ -5,7 +5,7 @@ import MainLayout from '../layouts/Main';
 import {apiClient} from '../lib/api';
 import {makeAllMenus} from '../lib/menu';
 import {IMenuItem} from '../@types/components';
-import bgImg from '../assets/cover-bg.jpeg';
+import bgImg from '../assets/cover-bg.jpg';
 import bgPortraitImg from '../assets/cover-bg-portrait.jpg';
 import CoverTextInCenter from '../components/CoverTextInCenter';
 import ProductsSliderByQuery from '../components/ProductsSliderByQuery';
@@ -24,7 +24,7 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 				img={bgImg.src}
 				imgPortrait={bgPortraitImg.src}
 				content={{
-					intro: 'Muhammad Ali',
+					intro: 'ProShopper',
 					head: 'Impossible is nothing!',
 					subHead: 'Impossible is not a fact. It’s an opinion. Impossible is not a declaration. It’s a dare. Impossible is potential. Impossible is temporary.'
 				}}
